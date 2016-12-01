@@ -9,6 +9,23 @@
   </head>
 
   <body>
+
+<div class="top">
+  	<img src="/assets/seeno.svg" alt="Company Logo">
+
+  	<div class="login-signup">
+  		<div class="topbar login">
+		<%= link_to "Login", new_user_session_path %>
+		</div>
+		<div class="topbar signup">
+		<%= link_to "Sign up", new_user_registration_path%>
+  		</div>
+  	</div>
+</div>
+  
     <%= yield %>
+    <footer>All rights reserved, made with &hearts;</footer>
   </body>
+
+
 </html>

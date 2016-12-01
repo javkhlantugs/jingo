@@ -1,0 +1,20 @@
+// Place all the styles related to the site controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.home-top {
+	margin-top: -10px;
+	background-image:url("city-wallpaper-18.jpg");
+	background-size: cover;
+	text-align: center;
+	height: 350px;
+	position:relative;
+}
+
+.home-main {
+	position: absolute;
+  top: 40%;
+  left: 41%;
+
+}
+
+
