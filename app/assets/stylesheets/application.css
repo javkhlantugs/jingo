@@ -20,16 +20,27 @@ body {
 	position: fixed;
 	margin: 0;
     padding: 0;
-    background-color: #333;
+    background-color: #EF6f6c;
     width: 100%;
     top: 0;
     left: 0;
-    height: 65px;
+    height: 66px;
     z-index: 10;
 }
 
+.top-signed-in {
+    height: 40px;
+
+}
+
+.top-signed-in img {
+	margin-top: 0;
+}
+
+
 .topbar {
 	display: inline-block;
+	margin-left: 9px;
 }
 
 img {
@@ -38,12 +49,36 @@ img {
 	height: 63px;
 }
 
-.login-signup{
+.navbar	{
 	position: fixed;
-	top: 8px;
 	right:16px;
 }
 
-.login{
-	border: 1px;
+.logged-out {
+	top: 18px;
+}
+
+.logged-in {
+	top: 7px;
+}
+
+footer {
+	background-color: #2f4f4f;
+	text-align: center;
+	vertical-align: middle;
+	height: 150px;
+	margin-top: 100px;
+	padding-top: 50px;
+	/*position: absolute;*/
+    width:100%;
+   /* bottom: 0;*/
+}
+
+html, body {
+    height:100%;
+}
+
+
+.top-notice{
+
 }

@@ -1,13 +1,16 @@
 // Place all the styles related to the site controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
 .home-top {
 	margin-top: -10px;
 	background-image:url("city-wallpaper-18.jpg");
 	background-size: cover;
 	text-align: center;
-	height: 350px;
-	position:relative;
+	position: relative;
+	height: 450px;
+
 }
 
 .home-main {
@@ -17,4 +20,25 @@
 
 }
 
+.card {
+	display: inline-block;
+	height: 250px;
+	width: 200px;
+	margin:24px;
+	padding-top: 25px;
+	padding-left: 13px;
+	padding-right: 13px;
+	background-color: #fb8b24;
+	vertical-align: middle;
+
+}
+
+
+
+
+.home-info {
+	margin-top: 100px;
+	text-align: center;
+
+}
 

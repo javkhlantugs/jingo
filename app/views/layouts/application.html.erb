@@ -9,22 +9,58 @@
   </head>
 
   <body>
+    
 
-<div class="top">
-  	<img src="/assets/seeno.svg" alt="Company Logo">
+    <% if user_signed_in? %>
+      <div class="top-signed-in top">
+        <a href="/">
+        <img src="/assets/seeno.svg" alt="Company Logo">
+        </a>
+    <!-- login logout -->
+        <div class="navbar logged-in">
+        <div class="topbar logout">
+          <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "btn-lg" %>
+        </div>
+        <div class="topbar setting">
+          <%= link_to "Settings", edit_user_registration_path, class: "btn-lg" %>
+        </div> 
+        <div class="topbar profile">
+        <%= link_to current_user.first_name, profile_path(current_user), class: "btn-lg" %> 
+        </div>
+        </div>
+      </div>
 
-  	<div class="login-signup">
+      <% else %>
+
+        <div class="top ">
+        <a href="/">
+  	       <img src="/assets/seeno.svg" alt="Company Logo">
+           </a>
+  	       <div class="navbar logged-out">
   		<div class="topbar login">
-		<%= link_to "Login", new_user_session_path %>
+		<%= link_to "Login", new_user_session_path, class: "btn-lg" %>
 		</div>
 		<div class="topbar signup">
-		<%= link_to "Sign up", new_user_registration_path%>
+		<%= link_to "Sign up", new_user_registration_path, class: "btn-lg" %>
   		</div>
   	</div>
-</div>
-  
+      </div>
+    <% end %>
+    
+
+
+    <% if notice %>
+    <p class = 'top-notice notice'><%= notice %></p>
+    <% end %>
+
+  <% if alert %>
+    <p class='top-notice alert'><%= alert %></p>
+    <% end %>
+
+
+
     <%= yield %>
-    <footer>All rights reserved, made with &hearts;</footer>
+    <footer><p>All rights reserved, made with &hearts;</p>  </footer>
   </body>
 
 

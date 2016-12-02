@@ -3,6 +3,7 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
+
   <div class="field">
     <%= f.label :first_name %><br />
     <%= f.text_field :first_name, autofocus: true %>
@@ -20,7 +21,7 @@
 
   <div class="field">
     <%= f.label :phone_number %><br />
-    <%= f.number_field :phone %>
+    <%= f.telephone_field :phone %>
   </div>
 
   <div class="field">
@@ -30,7 +31,7 @@
 
   <div class="field">
     <%= f.label :hometown %><br />
-    <%= f.text_field :hometown %>
+    <%= country_select("user", "hometown") %>
   </div>
 
   <div class="field">

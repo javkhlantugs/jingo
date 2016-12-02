@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   #homepage route
   root "site#index"
 
+  get '/profile/:id', to: 'profiles#show', as: 'profile' 
 
 end
