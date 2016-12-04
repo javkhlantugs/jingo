@@ -5,7 +5,6 @@
 .info-block-img {
 	
 	display: inline-block;
-	margin-left: 12px;
 	margin-top: 0;
 	margin-bottom: 10px;
 }
@@ -18,23 +17,20 @@
 	position: absolute;
 	left: 5%;
 	display: inline-block;
+	width: 35%;
 	
-	border-radius: 10px;
-	box-shadow: 4px 7px 19px grey;
+
 }
+
+
 
 .block-activities {
 	display: inline-block;
 	position: absolute;
-	right: 5%;
+	right: 7%;
 }
 
-.my-profile-container {
-	position: static;
-	height: 100%;
-}
 
 .block-header {
-	margin: 9px 0 0 12px;
 	font-size: 25px;
 }

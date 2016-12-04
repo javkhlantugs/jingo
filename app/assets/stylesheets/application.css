@@ -15,17 +15,19 @@
  */
 body {
 	margin: 75px 0 0 0;
+	background-color: #eff2f6;
 }
 .top {
 	position: fixed;
 	margin: 0;
     padding: 0;
-    background-color: #EF6f6c;
+    background-color: #b8c6cb;
     width: 100%;
     top: 0;
     left: 0;
     height: 66px;
     z-index: 10;
+    box-shadow: 1px 1px 6px #474451;
 }
 
 .top-signed-in {
@@ -69,16 +71,21 @@ footer {
 	height: 150px;
 	margin-top: 100px;
 	padding-top: 50px;
-	/*position: absolute;*/
     width:100%;
-   /* bottom: 0;*/
 }
 
 html, body {
     height:100%;
 }
+.block {
+	border: 1px solid #62bfed;
+	border-radius: 6px;
+	background-color: #fdfdfe;
+	padding: 12px;
+}
 
-
-.top-notice{
-
+.my-container {
+	position: static;
+	height: 100%;
+	width: 100%;
 }
