@@ -19,5 +19,11 @@
 	<h4 class='block-header'>
 	ACTIVITIES
 	</h4>
+	<% @created_events.each do |event| %>
+	<div id="<%= event.id %>" class="panel panel-default">
+	<p>Created an event <%= event.title %></p>
+	<button data-event-id="<%= event.id %>" data-user-id="<%= @the_user.id %>" class="js-delete-event">Delete</button>
+	</div>
+	<% end %>
 </div>
 </div>

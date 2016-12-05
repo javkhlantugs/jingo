@@ -9,18 +9,13 @@ class EventsController < ApplicationController
 
 	def create
 		@user = User.find(params[:user_id])
-		@new = @user.events.new(
-			title: params[:event][:title],
-			description: params[:event][:description],
-			date: params[:event][:date_date],
-			date: params[:event][:date_time],
-			street: params[:event][:street],
-			city: params[:event][:city],
-			state: params[:event][:state],
-			zipcode: params[:event][:zipcode])
+		@new = @user.events.new(event_params)
 		@new.save!
 		redirect_to root_path
 	end
 
+	def event_params
+		params.require(:event).permit(:title, :description, :date, :street, :city, :state, :zipcode, :avatar, :sponsored)
+	end
 
 end

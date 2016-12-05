@@ -3,11 +3,21 @@
 	<%= link_to "Events", root_path, class: "btn btn-default home-events js-events" %>
 	<p class='home-town js-town'>Town</p>
 	</div>
+
 <div class="my-container">
 <%= link_to "+Create Event", new_user_event_path(current_user), class: "create-event" %>
 <div class="block block-events">
 	<p class="block-header">Events</p>
 	<% @all_events.each do |an_event| %>
+	<% if an_event.sponsored %>
+		<div class="sponsored-events">
+			<%= an_event.title %>
+		</div>
+		<% end %>
+	<% end %>
+	<% @all_events.each do |an_event| %>
+	<% if an_event.sponsored == false %>
+		<div class="not=sponsored-events">
 		<div class='an-event panel panel-default'>
 			<div class='panel-heading'><%= an_event.title %>
 			</div>
@@ -15,8 +25,9 @@
 			<p>Date: <%= an_event.date_date %> </p>
 			<p>Time: <%= an_event.date_time %></p>
 			</div>
-	</div>
+			</div>
+			</div>
+	<% end %>
 	<% end %>
 </div>
 </div>
-

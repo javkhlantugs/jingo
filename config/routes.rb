@@ -6,6 +6,10 @@ Rails.application.routes.draw do
   resources :users, :only => :none do
   	resources :events
   end
+
+   scope "/api" do
+    resources :events, controller: "events_api"
+	end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   #homepage route
