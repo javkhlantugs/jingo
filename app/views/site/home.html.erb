@@ -8,16 +8,20 @@
 <%= link_to "+Create Event", new_user_event_path(current_user), class: "create-event" %>
 <div class="block block-events">
 	<p class="block-header">Events</p>
+		<div class="sponsored-events">
+	<h4>Promoted Events</h4>
 	<% @all_events.each do |an_event| %>
 	<% if an_event.sponsored %>
-		<div class="sponsored-events">
+			<div class="sponsored-event">
+			<%= image_tag an_event.avatar.url(:medium), class: "sponsored-event-photo" %><br>
 			<%= an_event.title %>
-		</div>
+			</div>
 		<% end %>
 	<% end %>
+		</div>
+		<div class="not-sponsored-events">
 	<% @all_events.each do |an_event| %>
 	<% if an_event.sponsored == false %>
-		<div class="not=sponsored-events">
 		<div class='an-event panel panel-default'>
 			<div class='panel-heading'><%= an_event.title %>
 			</div>
@@ -26,8 +30,8 @@
 			<p>Time: <%= an_event.date_time %></p>
 			</div>
 			</div>
+	<% end %>
+	<% end %>
 			</div>
-	<% end %>
-	<% end %>
 </div>
 </div>
