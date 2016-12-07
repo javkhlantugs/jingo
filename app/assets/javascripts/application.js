@@ -14,3 +14,26 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+
+
+
+$(document).on('turbolinks:load', function () {
+	$(".js-events").on('click', showEvents);
+	$(".js-town").on('click', showTown)
+	console.log("yo")
+});
+
+
+
+function showEvents() {
+	$(".my-container-events").show();
+	$(".my-container-map").hide();
+}
+
+
+function showTown() {
+	$(".my-container-map").show();
+	$(".my-container-events").hide();
+	google.maps.event.trigger(map, 'resize');
+}

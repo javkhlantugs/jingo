@@ -2,7 +2,31 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.block-town {
+	position: relative;
+	left: 3%;
 
+	width: 67%;
+}
+
+.block {
+	margin-top: 16px;
+	border: 1px solid #62bfed;
+	border-radius: 6px;
+	background-color: #fdfdfe;
+	padding: 12px;
+}
+
+.my-container-events {
+	height: 100%;
+	width: 100%;
+}
+
+#map {
+        height: 400px;
+        width: 65%;
+        min-width: 330px;
+       }
 .home-top {
 	margin-top: -10px;
 	background-image:url("redhead.jpg");

@@ -4,20 +4,20 @@
 
 .info-block-img {
 	
-	display: inline-block;
 	margin-top: 0;
 	margin-bottom: 10px;
+	min-width: 200px;
+	
 }
 
 .info-block-details {
-	display: inline-block;
 }
 
 .block-info {
-	position: absolute;
-	left: 5%;
+	position: relative;
+	left: 3%;
 	display: inline-block;
-	width: 35%;
+	min-width: 370px;
 	
 
 }
@@ -25,10 +25,11 @@
 
 
 .block-activities {
-	display: inline-block;
-	position: absolute;
-	right: 7%;
+	position: relative;
 	width: 50%;
+	min-width: 300px;
+	left: 3%;
+
 }
 
 

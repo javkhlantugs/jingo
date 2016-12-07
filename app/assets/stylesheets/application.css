@@ -72,20 +72,8 @@ footer {
 	margin-top: 100px;
 	padding-top: 50px;
     width:100%;
+    bottom: 0;
 }
 
 html, body {
     height:100%;
-}
-.block {
-	border: 1px solid #62bfed;
-	border-radius: 6px;
-	background-color: #fdfdfe;
-	padding: 12px;
-}
-
-.my-container {
-	position: static;
-	height: 100%;
-	width: 100%;
-}

@@ -1,11 +1,13 @@
 <h2 class="profile-header">My Profile</h2>
 <div class="my-container">
 <div class='block-info block'>
-	<h4 class='block-header'>
+	<p class='block-header'>
 	INFO
-	</h4>
+	</p>
 
-	<img src="/assets/lv.jpg" class='img-thumbnail info-block-img' alt='avatar'>
+	
+	<%= image_tag @the_user.avatar.url(:medium), class: "img-thumbnail info-block-img" %><br>
+
 	<div class="info-block-details">
 		<p>Name: <%= @the_user.first_name %></p>
 
