@@ -21,7 +21,7 @@ body {
 	position: fixed;
 	margin: 0;
     padding: 0;
-    background-color: #b8c6cb;
+    background-color: #FFFFFF;
     width: 100%;
     top: 0;
     left: 0;
@@ -57,11 +57,11 @@ body {
 }
 
 .logged-out {
-	top: 18px;
+	top: 14px;
 }
 
 .logged-in {
-	top: 7px;
+	top: 3px;
 }
 
 footer {

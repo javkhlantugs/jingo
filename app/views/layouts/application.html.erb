@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Jingo</title>
+    <title>Seeno</title>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/buttons.css">
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script type="text/javascript" src="assets/buttons.js"></script>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -20,13 +24,13 @@
     <!-- login logout -->
         <div class="navbar logged-in">
         <div class="topbar logout">
-          <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "btn-lg" %>
+          <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "button button-border-primary button-rounded" %>
         </div>
         <div class="topbar setting">
-          <%= link_to "Settings", edit_user_registration_path, class: "btn-lg" %>
+          <%= link_to "Settings", edit_user_registration_path, class: "button button-border-primary button-rounded" %>
         </div> 
         <div class="topbar profile">
-        <%= link_to current_user.first_name, profile_path(current_user), class: "btn-lg" %> 
+        <%= link_to current_user.first_name, profile_path(current_user), class: "button button-border-primary button-rounded" %> 
         </div>
         </div>
       </div>
@@ -39,10 +43,10 @@
            </a>
   	       <div class="navbar logged-out">
   		<div class="topbar login">
-		<%= link_to "Login", new_user_session_path, class: "btn-lg" %>
+		<%= link_to "Login", new_user_session_path, class: "button button-border-primary button-rounded button-large" %>
 		</div>
 		<div class="topbar signup">
-		<%= link_to "Sign up", new_user_registration_path, class: "btn-lg" %>
+		<%= link_to "Sign up", new_user_registration_path, class: "button button-border-primary button-rounded button-large" %>
   		</div>
   	</div>
       </div>
