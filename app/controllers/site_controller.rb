@@ -5,7 +5,7 @@ class SiteController < ApplicationController
 	def index
 		if user_signed_in?
 			@all_events = Event.all
-				
+			
 			render :home
 		else 
 			render :index

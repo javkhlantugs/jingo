@@ -7,8 +7,14 @@ Rails.application.routes.draw do
   	resources :events
   end
 
+  scope '/api' do
+    resources :users, only: [:index, :show], controller: 'users_api'
+
+    get '/zipcodes' => 'users_api#zipcodes'
+  end
+
    scope "/api" do
-    resources :events, controller: "events_api"
+    resources :events, only: [:index, :show, :destroy], controller: "events_api"
 	end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
