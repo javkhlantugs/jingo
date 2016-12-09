@@ -46,58 +46,45 @@
           zoom: 11
           }); 
 
-        var script = document.createElement('script');
-        script.src = '/api/users';
-        document.getElementsByTagName('head')[0].appendChild(script);
+        // var script = document.createElement('script');
+        // script.src = '/api/users';
+        // document.getElementsByTagName('head')[0].appendChild(script);
 
         var script = document.createElement('script');
         script.src = '/api/zipcodes';
         document.getElementsByTagName('head')[0].appendChild(script);
 
-        var zipCodeGeo = []
 
         window.handleUserData = function(results) {
-        // for (var i = 0; i < results.length; i++) {
-        //   var coords = results.features[i].geometry.coordinates;
-        //   var latLng = new google.maps.LatLng(coords[1],coords[0]);
-        //   var marker = new google.maps.Marker({
-        //     position: latLng,
-        //     map: map
-        //   });
-        // }
-        results.forEach(function (element){
-
-        });
-        
-
-        // console.log(results)
-        
-      }
-
+          
+        }
 
         window.zipContainingUsers = function(results) {
         
-         for (var i = 0; i < results.length; i ++) {
-      
-              $.ajax({
-                type: "GET",
-                url: `http://maps.googleapis.com/maps/api/geocode/json?address=${results[i]}&sensor=false`,
-                success: goToFunction,
-                error: handleError
-              })
-            }
+          for (var i = 0; i < results.length; i ++) {
+            $.ajax({
+              type: "GET",
+              url: `http://maps.googleapis.com/maps/api/geocode/json?address=${results[i]}&sensor=false`,
+              success: goToFunction,
+              error: handleError
+            })
             
+            
+            function goToFunction(response) {
+              var radiusLength = 
+              var theCircle = new google.maps.Circle({
+                strokeColor: '#FF0000',
+                strokeOpacity: 0.8,
+                strokeWeight: 2,
+                fillColor: '#FF0000',
+                fillOpacity: 0.35,
+                map: map,
+                center: response.results[0].geometry.location,
+                radius: Math.log1.5()
+              });
+            }
+          }  
         }
-        
-        function goToFunction(response) {
-        
-            zipCodeGeo.push(response);
-            // console.log(zipCodeGeo[0]);
-          map.data.addGeoJson(zipCodeGeo[0]);
-          map.data.setStyle({
-            icon: getCircle()
-          });
-          }
         
 
 

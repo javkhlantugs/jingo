@@ -11,9 +11,7 @@ class EventsController < ApplicationController
 		@user = User.find(params[:user_id])
 		@new = @user.events.new(event_params)
 
-		puts "\n\n\n````````````````````````````"
-		p @new
-		puts "````````````````````````````\n\n\n"
+		
 		@new.save!
 		redirect_to root_path
 	end
