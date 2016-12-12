@@ -1,6 +1,22 @@
 // Place all the styles related to the site controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.infowindow-div{
+	min-width: 90px;
+	max-height: 250px;
+	margin-bottom: 6px;
+}
+
+.infowindow-avatar {
+	display: inline-block;
+	width: 25px;
+	vertical-align:top;
+}
+
+.infowindow-namenumber {
+	display: inline-block;
+	vertical-align:top;
+}
 
 .block-town {
 	position: relative;
@@ -40,10 +56,25 @@
 
 .home-main {
 	position: relative;
-  top: 40%;
+  top: 30%;
   right: 25%;
 
 }
+
+.home-main a {
+	margin-top: 14px;
+    width: 200px;
+
+}
+.home-main p {
+	color: #fefefe;
+      font-size: 22px;
+      font-weight: lighter;
+      font-family: 'Work Sans', sans-serif;
+ }
+
+
+
 .home-mainbar {
 	position: relative;
 	left: 3%;
@@ -51,6 +82,11 @@
 
 .home-events, .home-town{
 	display:inline-block;
+
+}
+
+.home-town{
+	background-color: #5eb1bf;
 }
 
 .card {

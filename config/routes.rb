@@ -23,6 +23,7 @@ Rails.application.routes.draw do
 
   get '/profile/:id', to: 'profiles#show', as: 'profile' 
   
+  get '/profile/user/:id', to: 'profiles#user_profile', as: 'user_profile'
 
 
 end

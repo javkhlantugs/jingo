@@ -1,7 +1,6 @@
-<h2>Home Page</h2>
-<div class="home-mainbar">
-	<button class='btn btn-default home-events js-events'>EventsJS</button>
-	<button class='home-town js-town btn btn-default'>Town</button>
+<div class="home-mainbar button-group">
+	<button class='button button-primary home-events js-events'>EventsJS</button>
+	<button class='home-town js-town button button-primary'>Town</button>
 	</div>
 
 <div class="my-container-events">
@@ -53,28 +52,39 @@
         var script = document.createElement('script');
         script.src = '/api/zipcodes';
         document.getElementsByTagName('head')[0].appendChild(script);
+       
         var usersInfo = []
 
         window.handleUserData = function(results) {
           for (var aUser = 0; aUser < results.length; aUser ++) {
             usersInfo.push(results[aUser]);
           }
-          console.log(usersInfo);
+          // console.log(usersInfo);
         }
 
+        var panels = ["panel-success", "panel-info", "panel-danger", "panel-warning", "panel-default"]
 
-        window.zipContainingUsers = function(results) {
-          for (var i = 0; i < results.length; i ++) {
+        window.zipContainingUsers = function(zipApiResults) {
+          for (var i = 0; i < zipApiResults.length; i ++) {  
+
             $.ajax({
               type: "GET",
-              url: `http://maps.googleapis.com/maps/api/geocode/json?address=${results[i]}&sensor=false`,
+              url: `http://maps.googleapis.com/maps/api/geocode/json?address=${zipApiResults[i]}&sensor=false`,
               success: goToFunction,
               error: handleError
             })
-            
-            
+
+          }  
+        }
             function goToFunction(response) {
-              console.log(response) 
+              var responseZero = response.results[0]
+            var radiusLength = 0;
+             usersInfo.forEach(function(element){
+              if (parseInt(responseZero.address_components[0].long_name) == element.zipcode) {
+                radiusLength += 1
+              }
+            });
+              
               var theCircle = new google.maps.Circle({
                 path: google.maps.SymbolPath.CIRCLE,
                 strokeColor: '#FF0000',
@@ -83,36 +93,33 @@
                 fillColor: '#FF0000',
                 fillOpacity: 0.35,
                 map: map,
-                center: response.results[0].geometry.location,
-                radius: 100
+                center: responseZero.geometry.location,
+                radius: 30 * (Math.log(radiusLength + 1) / Math.log(1.3))
               });
-         attachUsers(theCircle, usersInfo, response.results[0].address_components[0].long_name, response.results[0].geometry.location);
+            attachUsers(theCircle, usersInfo, responseZero.address_components[0].long_name, responseZero.geometry.location);
+              console.log(radiusLength)
+              
             }
-
-          }  
-        }
+             //~~~~~~~~~~~~goToFunction ends
 
         function attachUsers(theIcon, userInfo, zip, latlong) {
          
            var usersWithSameZip = [];
-
            userInfo.forEach(function(element){
-              if (zip === element.zipcode)
+              if (zip == element.zipcode) {
+                // console.log(element)
                 usersWithSameZip.push(element)
+              }
             });
-
-           // for (i = 0; i < usersWithSameZip.length; i++ ) {
-             
-           //    var person[i] = `<div><p>Name: ${usersWithSameZip[i].first_name}</p><p>Cell: ${usersWithSameZip[i].phone}`
-           //    i++ 
-           //  }
-
-            
-          
-          // console.log(nameAndNumber)
+           var str = ''
+           usersWithSameZip.forEach(function(element) {
+              var panelRandom = panels[Math.floor(Math.random() * panels.length)];
+              str += `<div class='infowindow-div panel ${panelRandom}'><a href="/profile/user/${element.id}" class="panel-heading infowindow-namenumber" style="margin-bottom: 0;">${element.first_name}</a><p class="panel-body" style="margin-bottom: 0; padding: 5px;">Cell: ${element.phone}</p></div>`
+           });
+           // console.log(str);
 
           var infowindow = new google.maps.InfoWindow({
-            content:  nameAndNumber(usersWithSameZip),
+            content:  str,
             position: latlong
             });
             theIcon.addListener('click', function() {
@@ -120,6 +127,7 @@
         });
           
           }
+          //~~~~~~~~~~~~~~attachUser ends
         
  
         if (navigator.geolocation) {
@@ -141,6 +149,7 @@
         	handleLocationError(false, infoWindow, map.getCenter());
         }
     }
+    //~~~~~~ functionInit ends
    	function handleLocationError(browserHasGeolocation, infoWindow, pos) {
   infoWindow.setPosition(pos);
   infoWindow.setContent(browserHasGeolocation ?

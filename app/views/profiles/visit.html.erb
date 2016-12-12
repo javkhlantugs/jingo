@@ -5,13 +5,13 @@
 	</p>
 
 	
-	<%= image_tag @the_user.avatar.url(:medium), class: "img-thumbnail info-block-img" %><br>
+	<%= image_tag @a_user.avatar.url(:medium), class: "img-thumbnail info-block-img" %><br>
 
 	<div class="info-block-details">
-		<p>Name: <%= @the_user.first_name %></p>
+		<p>Name: <%= @a_user.first_name %></p>
 
-		<p>From: <%= @the_user.hometown %></p>
-		<p>Presently: <%= @the_user.current_city %> </p>
+		<p>From: <%= @a_user.hometown %></p>
+		<p>Presently: <%= @a_user.current_city %> </p>
 	</div>
 
 	</div>
@@ -23,7 +23,6 @@
 	<% @created_events.each do |event| %>
 	<div id="<%= event.id %>" class="panel panel-default">
 	<p>Created an event <%= event.title %></p>
-	<button data-event-id="<%= event.id %>" data-user-id="<%= @the_user.id %>" class="js-delete-event">Delete</button>
 	</div>
 	<% end %>
 </div>

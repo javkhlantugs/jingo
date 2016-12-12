@@ -16,12 +16,13 @@
 body {
 	margin: 75px 0 0 0;
 	background-color: #eff2f6;
+	font-family: 'Verdana', Georgia, Serif;
 }
 .top {
 	position: fixed;
 	margin: 0;
     padding: 0;
-    background-color: #FFFFFF;
+    background-color: #1b9af7;
     width: 100%;
     top: 0;
     left: 0;
@@ -57,11 +58,11 @@ body {
 }
 
 .logged-out {
-	top: 14px;
+	top: 8px;
 }
 
 .logged-in {
-	top: 3px;
+	top: -1px;
 }
 
 footer {

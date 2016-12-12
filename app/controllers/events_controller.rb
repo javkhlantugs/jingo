@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-
+		before_action :authenticate_user!
 	def new
 		@today=Date.today + 1.day
 		@a_user = current_user
