@@ -21,11 +21,11 @@ class UsersApiController < ApplicationController
 		@common_hometown.each do |x| 
 			zipcodes.push(x.zipcode)
 		
-		end
-		zipcodes = zipcodes.uniq!
+			end
+		zipcodes.uniq!
 		zipcodes = zipcodes.select do |x|
 			x != nil
-		end
+			end
 
 		render json: zipcodes, callback: 'zipContainingUsers'
 	end
