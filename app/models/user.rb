@@ -12,7 +12,7 @@ class User < ApplicationRecord
   
          validates :first_name, presence: true
          validates :last_name, presence: true
-         validates :phone, uniqueness: true
+         validates :phone, uniqueness: true, length: {minimum: 10, maximum: 10}, allow_blank: true
          validates :hometown, presence: true
          validates :zipcode, length: {minimum: 5, maximum: 5}, allow_blank: true
 end

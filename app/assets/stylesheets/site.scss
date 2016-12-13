@@ -1,6 +1,11 @@
 // Place all the styles related to the site controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.home-info + footer{
+	margin-top: 0 !important;
+}
+
 .infowindow-div{
 	min-width: 90px;
 	max-height: 250px;
@@ -54,6 +59,12 @@
 
 }
 
+.garchig, .info {
+	color: white;
+	opacity: 1;
+}
+
+
 .home-main {
 	position: relative;
   top: 30%;
@@ -86,9 +97,34 @@
 }
 
 .home-town{
-	background-color: #5eb1bf;
+	background-image:url("crop2.jpg");
+	background-size: cover;
+	opacity: 0.6;
+}
+.home-town:hover {
+	opacity: 0.9;
 }
 
+
+.home-events {
+	background-size: cover;
+	background-image:url("crop1.jpg");
+	opacity: 0.6;
+
+}
+.home-events:hover {
+	opacity: 0.9;
+}
+
+.home-guide{
+	background-image:url("crop3.jpg");
+	background-size: cover;
+	opacity: 0.6;
+
+}
+.home-guide:hover {
+	opacity: 0.9;
+}
 .card {
 	display: inline-block;
 	height: 250px;
@@ -102,12 +138,16 @@
 
 }
 
-
+.texts {
+	background-color: rgba(169, 169, 169, 0.5);
+	height: 200px;
+}
 
 
 .home-info {
-	margin-top: 100px;
+	padding: 100px;
 	text-align: center;
+	background-color: #313131;
 
 }
 
