@@ -84,6 +84,7 @@
                 radiusLength += 1
               }
             });
+             console.log(30 * (Math.log(radiusLength + 1) / Math.log(1.3)))
               
               var theCircle = new google.maps.Circle({
                 path: google.maps.SymbolPath.CIRCLE,
@@ -94,10 +95,10 @@
                 fillOpacity: 0.35,
                 map: map,
                 center: responseZero.geometry.location,
-                radius: 30 * (Math.log(radiusLength + 1) / Math.log(1.3))
+                radius: 26 * (Math.log(radiusLength + 1) / Math.log(1.2))
               });
             attachUsers(theCircle, usersInfo, responseZero.address_components[0].long_name, responseZero.geometry.location);
-              console.log(radiusLength)
+              // console.log(radiusLength)
               
             }
              //~~~~~~~~~~~~goToFunction ends
