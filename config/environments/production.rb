@@ -89,10 +89,10 @@ Rails.application.configure do
 config.paperclip_defaults = {
   storage: :s3,
   s3_credentials: {
-    bucket: ENV.fetch('seeno'),
-    access_key_id: ENV.fetch('AKIAIKHOPU3A7YAHY4OQ'),
-    secret_access_key: ENV.fetch('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'),
-    s3_region: ENV.fetch('us-west-1'),
+    bucket: ENV.fetch('BUCKET'),
+    access_key_id: ENV.fetch('ACCESS_KEY'),
+    secret_access_key: ENV.fetch('SECRET_ACCESS_KEY'),
+    s3_region: ENV.fetch('REGION'),
   }
 }
 end
