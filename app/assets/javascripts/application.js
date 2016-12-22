@@ -24,7 +24,10 @@ $(document).on('turbolinks:load', function () {
 	console.log("yo")
 });
 
-
+function goToHomePage() {
+	    window.location = '/'; 
+	    // console.log("going to goToHomePage")  
+}
 
 function showEvents() {
 	$(".my-container-events").show();
